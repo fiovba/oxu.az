@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+     <title>Document</title>
+</head>
+<body>
+     <header>
+          <div>
+              <div class="w-full overflow-hidden bg-[#051d39]">
+                  <div class="whitespace-nowrap animate-marquee overflow-hidden text-md font-semibold text-white">
+                      * Bütün dövrlərin ən yüksək maaşlı idmançıları açıqlandı * Ayağına prosedur etdirdi, aylardır irin
+                      axır - Ölüm işində adı hallanan kosmetoloqdan ŞİKAYƏT * Dünyanın ən gözəl insanı bəlli oldu *
+                      Azərbaycanda yüksək vəzifəyə TƏYİNAT * Aİ missiyası Azərbaycan sərhədlərində göründü * Sakinlərin
+                      NƏZƏRİNƏ: Sabah bəzi ərazilərdə qaz olmayacaq * Ermənistanın mina terrorunun qurbanları danışıblar:
+                      "Bir gündə iki oğlumu itirdim" * Bakıda qadının da iştirak etdiyi içki məclisi ölümlə bitdi - Bir
+                      nəfəri bizlə qətlə yetirdilər * Vətən müharibəsi iştirakçısı xərçəngdən vəfat etdi * Azərbaycanda
+                      futbol hakimi yüksək vəzifəyə TƏYİN OLUNDU * COVID-19-la mübarizədə iştirak edən tibb işçilərinin
+                      əməkhaqlarına müddətli əlavənin vaxtı uzadılıb * Azərbaycanda istilik mövsümü nə zaman bitir? *
+                      Qarabağ və Şərqi Zəngəzura köçən ailələrə "kupça" veriləcək? * Gəncədə məktəblilər arasında DAVA -
+                      Xəsarət alan var * Tərtərdə evdən meyitləri tapılan ailənin GÖRÜNTÜLƏRİ
+                  </div>
+              </div>
+              <div class="flex">
+                  <!-- Sol ikonlar: Həmişə sütun (column) görünəcək -->
+                  <div class="bg-white h-full hidden lg:flex fixed z-55 left-0 top-[100px] flex-col p-4 gap-5  items-center">
+                      <div class="border-1 text-xs text-[#051d39] font-bold border-[#051d39] py-1 px-2 rounded-2xl">AZ
+                      </div>
+                      <div class="border-1 text-xs text-[#051d39] font-bold border-[#051d39] py-1 px-2 rounded-2xl">TR
+                      </div>
+                      <div class="border-1 text-xs text-[#051d39] font-bold border-[#051d39] py-1 px-2 rounded-2xl">ENG
+                      </div>
+                      <div><i class="fa-solid fa-circle-info"></i></div>
+                      <div><i class="fa-solid fa-bullhorn"></i></div>
+                      <div><i class="fa-solid fa-toggle-on"></i></div>
+                      <div><i class="fa-brands fa-facebook text-blue-700 text-xl"></i></div>
+                      <div><i class="fa-brands fa-x-twitter text-black text-xl"></i></div>
+                      <div><i class="fa-brands fa-telegram text-blue-700 text-xl"></i></div>
+                      <div><i class="fa-brands fa-whatsapp text-green-700 text-xl"></i></div>
+                  </div>
+  
+                  <div class="p-3 flex flex-1 justify-between ">
+                      <!-- Logo -->
+                      <div><a class="w-full" href="index.htm"><img src="https://oxu.az/media/img/logo.svg?v=1" alt=""></a>
+                      </div>
+  
+                      <!-- Menyular + hamburger -->
+                      <div class="flex gap-4">
+                          <!-- Menyular: sadəcə desktop üçün -->
+  
+                          <div class="lg:flex hidden items-start gap-2 text-sm">
+                              <div class="flex gap-2 bg-red-600 py-1 px-4 rounded-3xl text-white">
+                                  <span><i class="fa-solid fa-video"></i></span>
+                                  <span>Live</span>
+                              </div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">İlham Əliyev</div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">Papa Fransisk</div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">Böyük Qayıdış</div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">Hava Proqnozu</div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">ABŞ-Çin İqtisadi Müharibəsi
+                              </div>
+                              <div class="menu-item border border-black py-1 px-4 rounded-3xl">Neokolonizmlə Mübarizə
+                              </div>
+                          </div>
+                          <div><i class="fa-solid fa-magnifying-glass"></i></div>
+  
+                          <!-- Hamburger menyu butonu: hər yerdə görünəcək -->
+                          <button id="menu-btn" class="flex flex-col space-y-1">
+                              <span class="w-6 h-0.5 bg-black"></span>
+                              <span class="w-6 h-0.5 bg-black"></span>
+                              <span class="w-6 h-0.5 bg-black"></span>
+                          </button>
+  
+                      </div>
+                  </div>
+              </div>
+              <div id="dropdownWrapper" class=" overflow-hidden w-full top-[66px] fixed z-50  transition-all duration-300 ease-in-out max-h-0">
+                  <nav class="bg-white flex shadow p-3 justify-center items-center">
+                    <ul class="w-[70%]  flex flex-wrap gap-3 p-5">
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Ana səhifə</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Siyasət</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">İqtisadiyyat</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Cəmiyyət</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Ordu</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Şou-biznes</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Kriminal</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">İdman</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Mədəniyyət</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Dünya</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Hadisə</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Müsahibə</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Turizm</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">İKT</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Baku TV</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">CineMastercard</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Digər</a></li>
+                      <li><a href="#" class="block text-center text-black border-1 p-2 border-black rounded-3xl">Maraqlı</a></li>
+                    </ul>
+                  </nav>
+                </div>
+          </div>
+      </header>
+      <main>
+        <div id="cards"></div>
+        <aside class="lg:w-[300px] hidden lg:block bg-[white] p-6 absolute right-0 top-[100px] h-full overflow-auto">
+          <h3 class="font-semibold text-2xl text-black mb-6">Son Xəbərlər</h3>
+          <ul class="space-y-4">
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Bütün dövrlərin ən yüksək maaşlı idmançıları açıqlandı</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Ayağına prosedur etdirdi, aylardır irin axır - Ölüm işində adı hallanan kosmetoloqdan ŞİKAYƏT</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Dünyanın ən gözəl insanı bəlli oldu</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Azərbaycanda yüksək vəzifəyə TƏYİNAT</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Aİ missiyası Azərbaycan sərhədlərində göründü</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Sakinlərin NƏZƏRİNƏ: Sabah bəzi ərazilərdə qaz olmayacaq</a>
+              </li>
+              <li>
+                  <a href="#" class="text-sm text-black hover:text-[#1894a0] transition-colors duration-300">Ermənistanın mina terrorunun qurbanları danışıblar: "Bir gündə iki oğlumu itirdim"</a>
+              </li>
+          </ul>
+      </aside>
+      
+      
+      
+      </main>
+      <footer class="bg-[#eff1f0] text-black py-8">
+          <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
+            
+            <!-- Logo -->
+            <div>
+              <img src="https://oxu.az/media/img/gmg/gmg-logo-az.svg?v=1.1.1" alt="Oxu.az Logo" class="w-32 mb-4">
+            </div>
+        
+            <!-- Haqqımızda -->
+            <div class="text-sm">
+              <h3 class="font-semibold mb-2">Haqqımızda</h3>
+              <p>
+                Oxu.Az 24 saat ərzində, Azərbaycan, türk və rus dillərində, ölkədə və dünyada baş verən ən aktual və maraqlı hadisələr barədə operativ xəbərlər təqdim edir.
+              </p>
+            </div>
+        
+            <!-- Əlaqə -->
+            <div class="text-sm">
+              <h3 class="font-semibold mb-2">Əlaqə</h3>
+              <p>
+                Email: info@oxu.az <br>
+                Tel: +994 12 123 45 67 <br>
+                Ünvan: Bakı, Azərbaycan
+              </p>
+            </div>
+        
+            <!-- Qısa məlumat -->
+            <div class="text-sm">
+              <h3 class="font-semibold mb-2">Hüquqi Məlumat</h3>
+              <p>
+                Bütün hüquqlar qorunur © 2013-2025 Oxu.Az
+              </p>
+            </div>
+        
+          </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.js"
+            integrity="sha512-LThUFuq6Y8DTeSxG7VgJQu+3slKAhZ1u3z1EJdZESaVuQIEJ7TXC/DV8xNNEDFW01iWF4tUuzeC4RdiyrRPdRw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="details.js" type="module"></script>
+</body>
+</html>

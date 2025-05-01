@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tiny.cloud/1/2ho7ss56y7cfgd8vrzrjx6pya64w02vtv6eokqvz0e0sbape/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+          selector: '#contentInput'
+        });
+      </script>
+</head>
+
+<body class="bg-gray-700 p-5">
+
+    <div id="newsModal" class="z-55  hidden flex fixed inset-0 bg-gray-800 bg-opacity-90  justify-center items-center">
+        <div class="bg-white p-6 rounded-md w-[60%]">
+            <h2 class="text-xl font-semibold mb-4">Yeni Xəbər Əlavə Et</h2>
+            <input type="text" id="titleInput" placeholder="Başlıq" class="border p-2 w-full mb-2">
+            <textarea id="contentInput" placeholder="Məzmun" class="border p-2 w-full mb-2"></textarea>
+            <input type="text" id="imgInput" placeholder="Şəkil URL" class="border p-2 w-full mb-2">
+            <button id="saveButton" onclick="saveNews()" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Yadda saxla</button>
+            <button onclick="closeModule()" class="bg-gray-400 text-white px-4 py-2 rounded">Bağla</button>
+        </div>
+    </div>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <button onclick="openModule()" class="bg-white rounded-2xl border-1 border-blue-950 p-[10px_40px]">ADD</button>
+        <table class="w-full text-sm text-left rtl:text-right text-gray-400">
+            <thead class="text-xs  uppercase bg-gray-700 text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        News Title
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Content
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Img
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Like/Dislike/View
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="admin.js" type="module">
+    </script>
+</body>
+
+</html>
