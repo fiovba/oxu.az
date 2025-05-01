@@ -87,13 +87,14 @@ function printNewsCards() {
         const dislikeClass = reaction === "dislike" ? "text-red-700" : "";
 
         cardsDiv.innerHTML += `
-        <div class="max-w-sm w-full p-4 space-y-4 overflow-hidden rounded-lg shadow-md bg-white text-gray-800">
+        <div class="w-full md:max-w-sm  p-4 space-y-4 overflow-hidden rounded-lg bg-[#fafaf9] text-gray-800">
             <div>
                 <a onclick="handleView(${news.id},${news.view})">
                     <img src="${news.img}" alt="" class="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500">
                     <h2 class="mb-1 text-xl font-semibold">${news.title}</h2>
-                    <span>${news.category}</span>
-                    <p class="text-sm dark:text-gray-600">${truncatedContent}</p>
+                    
+                    <p class="text-sm text-gray-600 pb-5">${truncatedContent}</p>
+                    
                 </a>
             </div>
             <div class="flex flex-wrap justify-between">
@@ -109,22 +110,27 @@ function printNewsCards() {
                         </svg>
                     </button>
                 </div>
-                <div class="flex space-x-2 text-sm dark:text-gray-600">
-                    <button type="button" class="flex items-center p-1 space-x-1.5">
-                        <span>
-                            <i class="fa-regular fa-thumbs-up text-xl hover:text-[#1894a0] ${likeClass}" 
-                               onclick="handleReaction(${news.id}, ${news.like}, true)">
-                            </i> ${news.like}
-                        </span>
-                        <span>
-                            <i class="fa-regular fa-thumbs-down text-xl hover:text-[#1894a0] ${dislikeClass}" 
-                               onclick="handleReaction(${news.id}, ${news.dislike}, false)">
-                            </i> ${news.dislike}
-                        </span>
-                        <span>
-                            <i class="fa-solid fa-eye"></i> ${news.view}
-                        </span>
-                    </button>
+                <div class="flex space-x-2 text-sm  dark:text-gray-600">
+                    <div class="flex justify-between gap-5 items-center p-1 space-x-1.5">
+                    <div>
+                    <span class="text-[#1894a0] font-bold ">${news.category}</span>
+                    </div>
+                       <div class="flex gap-4"> 
+                             <span>
+                                <i class="fa-regular fa-thumbs-up text-xl hover:text-[#1894a0] ${likeClass}" 
+                                onclick="handleReaction(${news.id}, ${news.like}, true)">
+                                </i> ${news.like}
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-thumbs-down text-xl hover:text-[#1894a0] ${dislikeClass}" 
+                                onclick="handleReaction(${news.id}, ${news.dislike}, false)">
+                                </i> ${news.dislike}
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-eye"></i> ${news.view}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>`;
@@ -133,7 +139,7 @@ function printNewsCards() {
 
 
 window.goDetails = function(id){
-    window.location.href=`https://oxu-az-lovat.vercel.app/?id=${id}`
+    window.location.href=`http://127.0.0.1:5500/details.htm?id=${id}`
 }
 
 getData();
