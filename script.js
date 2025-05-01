@@ -133,7 +133,7 @@ function printNewsCards() {
 
 
 window.goDetails = function(id){
-    window.location.href=`http://127.0.0.1:5500/details.htm?id=${id}`
+    window.location.href=`https://oxu-az-lovat.vercel.app/?id=${id}`
 }
 
 getData();
