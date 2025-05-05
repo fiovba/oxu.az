@@ -51,22 +51,28 @@ async function getData() {
 
     if (cardsDiv) printNewsCards();
 }
-window.handleReaction = async function(id, count, status) {
-    let obj = {};
+window.handleReaction = async function(id, likeCount, dislikeCount, status) {
     const storageKey = `reaction-${id}`;
     const currentReaction = localStorage.getItem(storageKey);
-
-    if (status == true && currentReaction != "like") {
-        obj.like = currentReaction == "dislike" ? count + 1 : count + 1;
-        obj.dislike = currentReaction == "dislike" ? count - 1 : count;
-        localStorage.setItem(storageKey, "like");
-    } else if (status == false && currentReaction != "dislike") {
-        obj.dislike = currentReaction == "like" ? count + 1 : count + 1;
-        obj.like = currentReaction == "like" ? count - 1 : count;
-        localStorage.setItem(storageKey, "dislike");
-    } else {
-        return; 
+    if ((status === true && currentReaction === "like") ||
+        (status === false && currentReaction === "dislike")) {
+        return;
     }
+
+    let obj = {};
+
+    if (status === true) {
+        if (currentReaction == "dislike") dislikeCount--;
+        likeCount++;
+        localStorage.setItem(storageKey, "like");
+    } else {
+        if (currentReaction == "like") likeCount--;
+        dislikeCount++;
+        localStorage.setItem(storageKey, "dislike");
+    }
+
+    obj.like = likeCount;
+    obj.dislike = dislikeCount;
 
     await updateNews(id, obj);
     getData();
@@ -87,7 +93,7 @@ function printNewsCards() {
         const dislikeClass = reaction === "dislike" ? "text-red-700" : "";
 
         cardsDiv.innerHTML += `
-        <div class="w-full md:max-w-sm  p-4 space-y-4 overflow-hidden rounded-lg bg-[#fafaf9] text-gray-800">
+        <div class="w-full md:max-w-sm  px-[40px] space-y-4 overflow-hidden rounded-lg bg-[#fafaf9] text-gray-800">
             <div>
                 <a onclick="handleView(${news.id},${news.view})">
                     <img src="${news.img}" alt="" class="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500">
@@ -118,12 +124,12 @@ function printNewsCards() {
                        <div class="flex gap-4"> 
                              <span>
                                 <i class="fa-regular fa-thumbs-up text-xl hover:text-[#1894a0] ${likeClass}" 
-                                onclick="handleReaction(${news.id}, ${news.like}, true)">
+                                onclick="handleReaction(${news.id}, ${news.like},${news.dislike}, true)">
                                 </i> ${news.like}
                             </span>
                             <span>
                                 <i class="fa-regular fa-thumbs-down text-xl hover:text-[#1894a0] ${dislikeClass}" 
-                                onclick="handleReaction(${news.id}, ${news.dislike}, false)">
+                                onclick="handleReaction(${news.id}, ${news.like},${news.dislike}, false)">
                                 </i> ${news.dislike}
                             </span>
                             <span>
