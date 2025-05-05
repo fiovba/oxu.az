@@ -54,14 +54,14 @@ async function getData() {
 window.handleReaction = async function(id, likeCount, dislikeCount, status) {
     const storageKey = `reaction-${id}`;
     const currentReaction = localStorage.getItem(storageKey);
-    if ((status === true && currentReaction === "like") ||
-        (status === false && currentReaction === "dislike")) {
+    if ((status == true && currentReaction == "like") ||
+        (status == false && currentReaction == "dislike")) {
         return;
     }
 
     let obj = {};
 
-    if (status === true) {
+    if (status == true) {
         if (currentReaction == "dislike") dislikeCount--;
         likeCount++;
         localStorage.setItem(storageKey, "like");
